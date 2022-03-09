@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;/*溢出隐藏的一个属性:一般会遇到的情况是内容超出了父级盒子,哪里超出就隐藏哪里！一般会用在一行文本超出固定宽度就隐藏超出的内容*/
+    font-family: Microsoft JhengHei;
+}
+
+li{
+    list-style: none;
+}
+
+.aside{
+    height: 100vh;/*vh就是当前屏幕可见高度的1%，也就是说,height:100vh == height:100%;
+                    但是当元素没有内容时候，设置height:100%，该元素不会被撑开，此时高度为0，但是设置height:100vh，该元素会被撑开屏幕高度一致。*/
+    width: 300px;
+    overflow: hidden;
+    background: #ccc;
+}
+
+.aside .album{
+    height: 300px;
+    background: #ccc;
+}
+
+.album-img{
+    background-image: url('./imgs/logo.png');
+    background-size: contain;/*background-size cover和contain的区别:相同点：图片都是等比例缩放
+                              不同点：cover是铺满整个显示区域。如果显示比例和显示区域的比例相差很大某些部分会不显示,contain：正好相反，他是按照某一边来覆盖显示区域的，会有白边*/
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border: 20px solid black;
+    border-radius: 50%;
+    box-sizing:border-box;
+}
+
+.spin{
+    animation: spin 5s infinite linear;
+}
+
+.list{
+    width: 300px;
+    padding-top: 20px;
+}
+
+.list li{
+    text-align: center;
+    padding: 10px 0;
+}
+
+.list .list-icon{
+    height: 30px;
+    width: 30px;
+    vertical-align: bottom;
+}
+
+.list li a{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.li-active{
+    background: #bdb9b9;
+}
+
+.info{
+    margin-top: 100px;
+    text-align: center;
+}
+.info img{
+    width: 300px;
+    height: auto;
+}
+
+.main{
+    position: absolute;
+    top: 0;
+    left: 300px;
+    height: 100vh;
+    width: calc(100vw - 300px);
+}
+
+.main-title{
+    padding: 10px 20px;
+}
+
+.music-item{
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    background: #cccccc;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.music-active{
+    animation: musicActive 3s infinite linear;
+}
+
+@keyframes musicActive{
+    from{
+        background: linear-gradient(to right,red,white);
+    }
+
+    to{
+        background: linear-gradient(to right,red,red);
+    }
+}
+
+
+
+#control{
+    position: absolute;
+    bottom: 50px;
+    height: 50px;
+    left: 350px;
+    background: #cccccc;
+    width: 400px;
+    text-align: center;
+    animation: showControl 0.5s ease-in;
+}
+
+@keyframes showControl {
+    from{
+        bottom: 0;
+    }
+
+    to{
+        bottom: 50px;
+    }
+
+
+}
+
+#control-img-prev{
+    display: inline-block;/*融合行内的块级元素*/
+    height: 50px;
+    width: 50px;
+    background-image: url("imgs/icon/prev.png");
+    background-size: contain;
+    background-position: center;
+}
+#control-img-play{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-image: url("imgs/icon/play.png");
+    background-size: contain;
+    background-position: center;
+}
+#control-img-next{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-image: url("imgs/icon/next.png");
+    background-size: contain;
+    background-position: center;
+}

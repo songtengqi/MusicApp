@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music App</title>
+    <!--    css代码在head中引入-->
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<!--定义整个页面-->
+<div id="container">
+    <!--定义左边部分-->
+    <div class="aside">
+
+        <div class="album">
+            <div class="album-img"></div>
+        </div>
+
+        <ul class="list">
+            <li class="li-active">
+                <a href=""><img class="list-icon" src="./imgs/icon/music.png">LocalMusic</a>
+            </li>
+        </ul>
+
+        <div class="info">
+
+        </div>
+
+    </div>
+
+    <!--右边部分-->
+    <div class="main" onmouseover="showControl()" onmouseout="hideControl()">
+
+        <div class="main-title">
+            <h1>PlayList</h1>
+        </div>
+
+        <div class="main-list">
+            <ul class="music-list" id="local-list">
+
+            </ul>
+        </div>
+
+        <div id="control" >
+            <!--为了不让页面跳转 herf="javascript:void(0)"-->
+            <a href="javascript:void(0)" id="control-img-prev" onclick="prev()"></a>
+            <a href="javascript:void(0)" id="control-img-play" onclick="playAPause()"></a>
+            <a href="javascript:void(0)" id="control-img-next" onclick="next()"></a>
+        </div>
+    </div>
+</div>
+<!--js代码可以放在html的任意位置-->
+<script src="./index.js"></script>
+</body>
+</html>
